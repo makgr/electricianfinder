@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2022 at 05:36 PM
+-- Generation Time: Oct 30, 2022 at 05:55 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -81,6 +81,30 @@ INSERT INTO `tblbooking` (`ID`, `BookingID`, `ServiceID`, `Name`, `MobileNumber`
 (5, 365319422, 5, 'Test', 8097867576, 'test@gmail.com', '2020-02-12', '7 p.m', '10 p.m', 'R-789 KW Raj Nagar Ghaziabad', 'Get Together', 'xskjhj nbzxjhgagwejmb gdjswgdscbxzmnb', '2020-01-29 05:39:29', 'Cancelled', 'Cancelled', '2020-01-29 05:44:23'),
 (6, 534626649, 6, 'Raj Kumar', 7674343543, 'raj@gmail.com', '2020-01-31', '9 a.m', '4 p.m', 'T-980 Mahagun Noida Sector 62', 'Concert', 'gjydywetyuavxeweytugauygshghwgfdyasywsgdg', '2020-01-29 05:41:01', NULL, NULL, NULL),
 (7, 761769920, 1, 'Anuj kumar', 1234567890, 'phpgurukulofficial@gmail.com', '2020-02-29', '6 p.m', '10 p.m', 'New Delhi India', 'Wedding', 'NA', '2020-02-10 15:32:17', 'Test remark', 'Approved', '2020-02-10 15:33:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblelectrician`
+--
+
+CREATE TABLE `tblelectrician` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `thana` int(11) DEFAULT 0,
+  `address` text DEFAULT NULL,
+  `specialization_area` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblelectrician`
+--
+
+INSERT INTO `tblelectrician` (`id`, `name`, `email`, `phone`, `password`, `thana`, `address`, `specialization_area`) VALUES
+(1, 'test electrician', 'test@mail.com', 2147483647, '827ccb0eea8a706c4c34a16891f84e7b', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -212,6 +236,12 @@ ALTER TABLE `tblbooking`
   ADD KEY `EventType` (`EventType`);
 
 --
+-- Indexes for table `tblelectrician`
+--
+ALTER TABLE `tblelectrician`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbleventtype`
 --
 ALTER TABLE `tbleventtype`
@@ -252,6 +282,12 @@ ALTER TABLE `tbladmin`
 --
 ALTER TABLE `tblbooking`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tblelectrician`
+--
+ALTER TABLE `tblelectrician`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbleventtype`
