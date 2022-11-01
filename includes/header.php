@@ -12,6 +12,7 @@
              <li><a href="services.php"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Services</a></li>
              <li><a href="electrician-register.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Register</a></li>
              <li><a href="contact.php"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contact</a></li>
+             <li><a href="electrician/login.php"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>Electrician Login</a></li>
              <li><a href="admin/login.php"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>Admin</a></li>
              </ul>
          </div>
