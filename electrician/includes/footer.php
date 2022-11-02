@@ -5,7 +5,7 @@
                         Crafted with <i class="fa fa-heart text-pulse"></i>
                     </div>
                     <div class="float-left">
-                       <h5 style="color: red"> Onlie DJ Management System </h5>
+                       <h5 style="color: red"> Electrician Finder web application </h5>
                     </div>
                 </div>
             </footer>
