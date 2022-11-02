@@ -43,7 +43,7 @@ echo "<script>alert('Invalid Details');</script>";
 <!doctype html>
 <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>       
-        <title>Onlind DJ Management System - Login Page</title>
+        <title>Electrician Finder web application - Login Page</title>
         <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
     </head>
     <body>
@@ -57,10 +57,10 @@ echo "<script>alert('Invalid Details');</script>";
                         <div class="hero-static col-md-6 col-xl-8 d-none d-md-flex align-items-md-end">
                             <div class="p-30 invisible" data-toggle="appear">
                                 <p class="font-size-h3 font-w600 text-white">
-                                    Online DJ Management System.
+                                Electrician Finder web application
                                 </p>
                                 <p class="font-italic text-white-op">
-                                    Copyright &copy; <span class="js-year-copy">2020</span>
+                                    Copyright &copy; <span class="js-year-copy"><?php echo date('Y');?></span>
                                 </p>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ echo "<script>alert('Invalid Details');</script>";
                                 <div class="px-30 py-10">
                                     <a class="link-effect font-w700" href="login.php">
                                         <i class="si si-fire"></i>
-                                        <span class="font-size-xl">ODMS</span>
+                                        <span class="font-size-xl">Electrician Finder web application</span>
                                     </a>
                                     <h1 class="h3 font-w700 mt-30 mb-10">Welcome to Your Dashboard</h1>
                                     <h2 class="h5 font-w400 text-muted mb-0">Please sign in</h2>
