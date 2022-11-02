@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2022 at 05:55 PM
+-- Generation Time: Nov 02, 2022 at 05:46 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -42,7 +42,7 @@ CREATE TABLE `tbladmin` (
 --
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
-(1, 'Test', 'admin', 5689784589, 'admin@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2020-01-21 11:48:13');
+(1, 'Test', 'admin', 5689784589, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '2020-01-21 11:48:13');
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,7 @@ CREATE TABLE `tblelectrician` (
 --
 
 INSERT INTO `tblelectrician` (`id`, `name`, `email`, `phone`, `password`, `thana`, `address`, `specialization_area`) VALUES
-(1, 'test electrician', 'test@mail.com', 2147483647, '827ccb0eea8a706c4c34a16891f84e7b', 0, NULL, NULL);
+(1, 'test name', 'test@mail.com', 33221563, '827ccb0eea8a706c4c34a16891f84e7b', 1, 'Dhaka', 'ac repair, fridge repair');
 
 -- --------------------------------------------------------
 
@@ -162,8 +162,8 @@ CREATE TABLE `tblpage` (
 --
 
 INSERT INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`) VALUES
-(1, 'aboutus', 'About Us', '<b>Online DJ Management System</b><div><b>ODMS&nbsp;is one of the Internet\'s largest and trusted Online DJ Booking Service. ODMS has done several placements locally &amp; globally for top artists.</b></div><div><b><br></b></div><div><b>&nbsp;Test data for testing.</b></div>', NULL, NULL, '2020-02-10 15:36:25'),
-(2, 'contactus', 'Contact Us', 'D-204, Hole Town South West,Delhi-110096,India', 'info@gmail.com', 1234567890, '2020-02-10 15:37:04');
+(1, 'aboutus', 'About Us', '<h1 style=\"margin-left:0in;text-align:justify;line-height:115%\"><span style=\"font-size: 12pt; line-height: 115%;\"><font color=\"#ffff99\">Advanced technology is becoming a significant first choice of people\r\nthese days. The continuous growth in innovation and massive investment in the\r\ndigital age has taken personal competition to greater heights, thus it is\r\nimportant to develop an electrician web application that helps your users\r\nconnect with the right electrician and get all the work done seamlessly. Some\r\nhome appliances need repair, don\'t get a new one instead which saves you money\r\nwith an electrician service web application. The best electrical wiring web\r\napplication finds you reliable and good electricians to upgrade your home\r\nappliances like geysers, electrical items, ovens, toasters, air-conditioners\r\nand any type of service you have requested.&nbsp;</font><o:p></o:p></span></h1>', NULL, NULL, '2022-11-02 16:45:00'),
+(2, 'contactus', 'Contact Us', 'Dhaka, Bangladesh', 'info@gmail.com', 1234567890, '2022-11-02 16:43:41');
 
 -- --------------------------------------------------------
 

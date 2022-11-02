@@ -39,7 +39,7 @@
                              <div class="content-header-item">
                                  <a class="link-effect font-w700" href="dashboard.php">
                                      <i class="si si-fire text-primary"></i>
-                                     <span class="font-size-xl text-dual-primary-dark">ODJ</span><span class="font-size-xl text-primary">MS</span>
+                                     <span class="font-size-xl text-dual-primary-dark">E</span><span class="font-size-xl text-primary">F</span>
                                  </a>
                              </div>
                              <!-- END Logo -->

@@ -32,7 +32,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online DJ Management System || Contact Us</title>
+<title>Electrician Finder web application || Contact Us</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />

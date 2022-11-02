@@ -7,7 +7,7 @@ include('includes/dbconnection.php');
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online DJ Management System || DJ Services</title>
+<title>Electrician Finder web application || Services</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="all" />
 <!-- Custom Theme files -->

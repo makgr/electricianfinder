@@ -69,6 +69,9 @@
 				<div class="clearfix"></div>
 		  </div>
 	 </div>
+	 <div class="container">  
+		
+	 </div>
 	<?php include_once('includes/footer.php');?>
 </div>
 <!---->
