@@ -1,54 +1,56 @@
 <?php
 session_start();
-error_reporting(0);
+// error_reporting(0);
 include('includes/dbconnection.php');
 
-    if(isset($_POST['submit']))
-  {
-  	$bid=$_GET['bookid'];
-  	
- $name=$_POST['name'];
-  $mobnum=$_POST['mobnum'];
- $email=$_POST['email'];
- $edate=$_POST['edate'];
- $est=$_POST['est'];
-  $eetime=$_POST['eetime'];
- $vaddress=$_POST['vaddress'];
- $eventtype=$_POST['eventtype'];
- $addinfo=$_POST['addinfo'];
- $bookingid=mt_rand(100000000, 999999999);
-$sql="insert into tblbooking(BookingID,ServiceID,Name,MobileNumber,Email,EventDate,EventStartingtime,EventEndingtime,VenueAddress,EventType,AdditionalInformation)values(:bookingid,:bid,:name,:mobnum,:email,:edate,:est,:eetime,:vaddress,:eventtype,:addinfo)";
-$query=$dbh->prepare($sql);
-$query->bindParam(':bookingid',$bookingid,PDO::PARAM_STR);
-$query->bindParam(':bid',$bid,PDO::PARAM_STR);
-$query->bindParam(':name',$name,PDO::PARAM_STR);
-$query->bindParam(':mobnum',$mobnum,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':edate',$edate,PDO::PARAM_STR);
-$query->bindParam(':est',$est,PDO::PARAM_STR);
-$query->bindParam(':eetime',$eetime,PDO::PARAM_STR);
-$query->bindParam(':vaddress',$vaddress,PDO::PARAM_STR);
-$query->bindParam(':eventtype',$eventtype,PDO::PARAM_STR);
-$query->bindParam(':addinfo',$addinfo,PDO::PARAM_STR);
 
- $query->execute();
-   $LastInsertId=$dbh->lastInsertId();
-   if ($LastInsertId>0) {
-    echo '<script>alert("Your Booking Request Has Been Send. We Will Contact You Soon")</script>';
-echo "<script>window.location.href ='services.php'</script>";
-  }
-  else
-    {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
-    }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "electricianfinder";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+if(isset($_POST['submit']))
+{
+	$bid=$_GET['bookid'];
+	
+$name=$_POST['name'];
+$mobnum=$_POST['mobnum'];
+$email=$_POST['email'];
+$edate=$_POST['edate'];
+$est=$_POST['est'];
+$eetime=$_POST['eetime'];
+$vaddress=$_POST['vaddress'];
+$eventtype=$_POST['eventtype'];
+$addinfo=$_POST['addinfo'];
+$payment_method=$_POST['payment_method'];
+$bookingid=mt_rand(100000000, 999999999);
+
+$sql="insert into tblbooking(BookingID,ServiceID,Name,MobileNumber,Email,EventDate,EventStartingtime,EventEndingtime,VenueAddress,electrician,AdditionalInformation,payment_method)
+      values('$bookingid','$bid','$name','$mobnum','$email','$edate','$est','$eetime','$vaddress','$eventtype','$addinfo','$payment_method')";
+if ($conn->query($sql) === TRUE) {
+	echo '<script>alert("Your Booking Request Has Been Send. We Will Contact You Soon")</script>';
+	echo "<script>window.location.href ='services.php'</script>";
+} else {
+	echo '<script>alert("Something Went Wrong. Please try again")</script>';
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
 }
+
+$conn->close();
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online DJ Management System || Contact Us</title>
+<title>Electrician Finder web application || Book Service</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -87,7 +89,7 @@ echo "<script>window.location.href ='services.php'</script>";
 		
 			 <div class="contact-grids">
 				 <div class="col-md-6 contact-left">
-					 <p>Book Your Events now. </p>
+					 <p>Book Your Service now. </p>
 					 <form method="post">
 					 	
 						 <ul>
@@ -101,13 +103,13 @@ echo "<script>window.location.href ='services.php'</script>";
 						 <ul>
 						 	 <ul>
 							 <li class="text-info">Mobile Number: </li>
-							 <li><input type="text" class="text" name="mobnum" required="true" maxlength="10" pattern="[0-9]+"></li>
+							 <li><input type="text" class="text" name="mobnum" required="true" maxlength="11" pattern="[0-9]+"></li>
 						 </ul>
-							 <li class="text-info">Event Date: </li>
+							 <li class="text-info">Date: </li>
 							 <li><input type="date" class="form-control" name="edate" required="true"></li>
 						 </ul>					 
 						 <ul>
-							 <li class="text-info">Event Starting Time:</li>
+							 <li class="text-info">Starting Time:</li>
 							 <li><select type="text" class="form-control" name="est" required="true">
 							 	<option value="">Select Starting Time</option>
 							 	<option value="1 a.m">1 a.m</option>
@@ -137,7 +139,7 @@ echo "<script>window.location.href ='services.php'</script>";
 							 </select></li>
 						 </ul>
 						 <ul>
-							 <li class="text-info">Event Finish Time:</li>
+							 <li class="text-info">Finish Time:</li>
 							 <li><select type="text" class="form-control" name="eetime" required="true">
 							 	<option value="">Select Finish Time</option>
 							 	<option value="1 a.m">1 a.m</option>
@@ -171,23 +173,33 @@ echo "<script>window.location.href ='services.php'</script>";
 							 <li><textarea type="text" class="form-control" name="vaddress" required="true" ></textarea></li>
 						 </ul>
 						 <ul>
-							 <li class="text-info">Type of Event:</li>
+							 <li class="text-info">Electrician:</li>
 							 <li><select type="text" class="form-control" name="eventtype" required="true" >
-							 	<option value="">Choose Event Type</option>
+							 	<option value="">Choose Electrician</option>
 							 	<?php 
+								$sql2 = "SELECT * from   tblelectrician ";
+								$query2 = $dbh -> prepare($sql2);
+								$query2->execute();
+								$result2=$query2->fetchAll(PDO::FETCH_OBJ);
 
-$sql2 = "SELECT * from   tbleventtype ";
-$query2 = $dbh -> prepare($sql2);
-$query2->execute();
-$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-
-foreach($result2 as $row)
-{          
-    ?>  
-<option value="<?php echo htmlentities($row->EventType);?>"><?php echo htmlentities($row->EventType);?></option>
- <?php } ?>
+								foreach($result2 as $row)
+								{          
+									?>  
+								<option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
+								<?php } ?>
 							 </select></li>
 						 </ul>	
+						 <ul>
+							 <li class="text-info">Payment Method:</li>
+							 <li>
+								<select type="text" class="form-control" name="payment_method" required="true" >
+									<option value="">Choose Method</option>
+									<option value="Cash">Cash</option>
+									<option value="Bkash">Bkash</option>
+								</select>
+							</li>
+						 </ul>	
+						 					
 						 <ul>
 							 <li class="text-info">Additional Information:</li>
 							 <li><textarea type="text" class="form-control" name="addinfo" required="true"></textarea></li>
