@@ -97,7 +97,7 @@ foreach($results as $row)
   <tr>
     
     <th>Date</th>
-    <td><?php  echo $row->EventDate;?></td>
+    <td><?php  echo date("d M, Y", strtotime($row->EventDate));?></td>
     <th>Starting Time</th>
     <td><?php  echo $row->EventStartingtime;?></td>
   </tr>
@@ -110,7 +110,7 @@ foreach($results as $row)
   </tr>
   <tr>
     
-    <th>Electriciane</th>
+    <th>Electrician Name:</th>
     <td><?php  echo $row->electrician;?></td>
     <th>AdditionalInformation</th>
     <td><?php  echo $row->AdditionalInformation;?></td>
@@ -125,8 +125,8 @@ foreach($results as $row)
    <tr>
     <th>Service Price</th>
     <td>$<?php  echo $row->ServicePrice;?></td>
-    <th>Apply Date</th>
-    <td><?php  echo $row->BookingDate;?></td>
+    <th>Booking Date</th>
+    <td><?php  echo date("d M, Y H:i a", strtotime($row->BookingDate));?></td>
   </tr>
    <tr>
     <th>Payment Method</th>

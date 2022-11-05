@@ -12,7 +12,7 @@ if (strlen($_SESSION['odmsaid']==0)) {
 <!doctype html>
 <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
-        <title>Onlind DJ Management System - Read Queries</title>
+        <title>Electrician Finder web application - Read Queries</title>
 
         <link rel="stylesheet" href="assets/js/plugins/datatables/dataTables.bootstrap4.min.css">
 

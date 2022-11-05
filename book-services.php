@@ -169,7 +169,7 @@ $conn->close();
 							 </select></li>
 						 </ul>
 						 <ul>
-							 <li class="text-info">Venue Address:</li>
+							 <li class="text-info">Service Address:</li>
 							 <li><textarea type="text" class="form-control" name="vaddress" required="true" ></textarea></li>
 						 </ul>
 						 <ul>

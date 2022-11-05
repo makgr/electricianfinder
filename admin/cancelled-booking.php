@@ -12,7 +12,7 @@ if (strlen($_SESSION['odmsaid']==0)) {
 <!doctype html>
 <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
-        <title>Online DJ Management System - Cancelled Booking</title>
+        <title>Electrician Finder web application - Cancelled Booking</title>
 
         <link rel="stylesheet" href="assets/js/plugins/datatables/dataTables.bootstrap4.min.css">
 

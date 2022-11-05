@@ -28,7 +28,7 @@ echo '<script>alert("Contact us has been updated")</script>';
 <!doctype html>
  <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
- <title>Onlind DJ Management System - Update Contact Us</title>
+ <title>Electrician Finder web application - Update Contact Us</title>
 <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>

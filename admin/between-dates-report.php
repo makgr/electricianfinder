@@ -11,7 +11,7 @@ if (strlen($_SESSION['odmsaid']==0)) {
 <!doctype html>
  <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
- <title>Onlind DJ Management System - Between Dates Report</title>
+ <title>Electrician Finder web application - Between Dates Report</title>
 <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
 
 </head>

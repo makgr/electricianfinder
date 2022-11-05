@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 06:41 PM
+-- Generation Time: Nov 05, 2022 at 07:27 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -203,16 +203,6 @@ CREATE TABLE `tbluser` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbluser`
---
-
-INSERT INTO `tbluser` (`ID`, `Name`, `MobileNumber`, `Email`, `Message`, `MsgDate`, `IsRead`) VALUES
-(1, 'Test', 7887878787, 'test@gmail.com', 'Hello', '2020-01-24 07:00:34', 1),
-(2, 'Poonam', 5545445444, 'poonam@yahoo.com', 'Hello Iwan to know you are take booking for Haryana', '2020-01-24 07:02:57', 1),
-(3, 'Test', 7654659878, 'test@gmail.com', 'Sample test.', '2020-01-29 06:05:08', NULL),
-(4, 'Anuj', 9999857867, 'phpgurukulofficial@gmail.com', 'NA', '2020-02-10 15:37:38', 1);
-
---
 -- Indexes for dumped tables
 --
 
@@ -304,7 +294,7 @@ ALTER TABLE `tblservice`
 -- AUTO_INCREMENT for table `tbluser`
 --
 ALTER TABLE `tbluser`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

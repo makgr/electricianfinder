@@ -67,6 +67,8 @@ font-size:2.3em;
 .content{
 	background:url(../images/main.jpg);
 	padding:5em 0 3em 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .slider{
 	position:relative;
