@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2022 at 05:46 PM
+-- Generation Time: Nov 05, 2022 at 06:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -61,9 +61,10 @@ CREATE TABLE `tblbooking` (
   `EventStartingtime` varchar(200) DEFAULT NULL,
   `EventEndingtime` varchar(200) DEFAULT NULL,
   `VenueAddress` mediumtext DEFAULT NULL,
-  `EventType` varchar(200) DEFAULT NULL,
+  `electrician` varchar(200) DEFAULT NULL,
   `AdditionalInformation` mediumtext DEFAULT NULL,
   `BookingDate` timestamp NULL DEFAULT current_timestamp(),
+  `payment_method` varchar(255) DEFAULT NULL,
   `Remark` varchar(200) DEFAULT NULL,
   `Status` varchar(200) DEFAULT NULL,
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
@@ -73,14 +74,8 @@ CREATE TABLE `tblbooking` (
 -- Dumping data for table `tblbooking`
 --
 
-INSERT INTO `tblbooking` (`ID`, `BookingID`, `ServiceID`, `Name`, `MobileNumber`, `Email`, `EventDate`, `EventStartingtime`, `EventEndingtime`, `VenueAddress`, `EventType`, `AdditionalInformation`, `BookingDate`, `Remark`, `Status`, `UpdationDate`) VALUES
-(1, 233064613, 1, 'Ashutosh', 8798787977, 'ashu@gmail.com', '2020-01-31', '2 p.m', '10 p.m', 'ABC park, Jawahar Nahar New Delhi ', 'Engagement', 'jguytugvnvjhgh', '2020-01-24 12:46:29', 'Approved', 'Approved', '2020-01-24 13:50:44'),
-(2, 750016128, 1, 'Jone', 4654644648, 'jon@gmail.com', '2020-01-30', '2 p.m', '7 p.m', 'Harikesh Nagar Block C JKL park', 'Social', 'kjhiuyughjvhsdadfs', '2020-01-28 05:44:37', 'Approved', 'Approved', '2020-01-28 11:11:17'),
-(3, 215398258, 3, 'Kishore Jha', 7846466478, 'kis@gmail.com', '2020-01-29', '1 p.m', '10 p.m', 'Kamla bhadhur road malvi bhavan  New delhi', 'Government', 'kjiououbouiosydieskjfhbbcxmcbjhfkdsfkjdljkdljfkdn', '2020-01-28 05:47:10', 'Approved', 'Approved', '2020-01-28 11:12:01'),
-(4, 206423586, 3, 'Gunjan Singh', 5555643433, 'gun@gmail.com', '2020-02-02', '11 a.m', '3 p.m', 'J-234 J&K block laxmi Nager,New Delhi', 'Sangeet', 'ghjgjhuywergcnxcjyhgfsdnbvxnzcgdsygtewghdfc', '2020-01-29 05:37:40', NULL, NULL, NULL),
-(5, 365319422, 5, 'Test', 8097867576, 'test@gmail.com', '2020-02-12', '7 p.m', '10 p.m', 'R-789 KW Raj Nagar Ghaziabad', 'Get Together', 'xskjhj nbzxjhgagwejmb gdjswgdscbxzmnb', '2020-01-29 05:39:29', 'Cancelled', 'Cancelled', '2020-01-29 05:44:23'),
-(6, 534626649, 6, 'Raj Kumar', 7674343543, 'raj@gmail.com', '2020-01-31', '9 a.m', '4 p.m', 'T-980 Mahagun Noida Sector 62', 'Concert', 'gjydywetyuavxeweytugauygshghwgfdyasywsgdg', '2020-01-29 05:41:01', NULL, NULL, NULL),
-(7, 761769920, 1, 'Anuj kumar', 1234567890, 'phpgurukulofficial@gmail.com', '2020-02-29', '6 p.m', '10 p.m', 'New Delhi India', 'Wedding', 'NA', '2020-02-10 15:32:17', 'Test remark', 'Approved', '2020-02-10 15:33:44');
+INSERT INTO `tblbooking` (`ID`, `BookingID`, `ServiceID`, `Name`, `MobileNumber`, `Email`, `EventDate`, `EventStartingtime`, `EventEndingtime`, `VenueAddress`, `electrician`, `AdditionalInformation`, `BookingDate`, `payment_method`, `Remark`, `Status`, `UpdationDate`) VALUES
+(1, 374218937, 3, 'rrr', 22334455, 'r@mail.com', '2022-11-07', '11 a.m', '2 a.m', 'eerr', 'test name', 'ddffgghh', '2022-11-05 17:34:14', 'Cash', 'yes', 'Approved', '2022-11-05 17:40:14');
 
 -- --------------------------------------------------------
 
@@ -184,12 +179,12 @@ CREATE TABLE `tblservice` (
 --
 
 INSERT INTO `tblservice` (`ID`, `ServiceName`, `SerDes`, `ServicePrice`, `CreationDate`) VALUES
-(1, 'Wedding DJ', '(we install the DJ equipment before your ceremony or after your wedding breakfast)', '800', '2020-01-24 07:17:43'),
-(2, 'Party DJ', '(we install the DJ equipment 1 hour before your selected event start time)', '700', '2020-01-24 07:18:32'),
-(3, 'Ceremony Music', 'Our ceremony music service is a popular add on to our wedding DJ stay all day hire.', '650', '2020-01-24 07:19:14'),
-(4, 'Photo Booth Hire', '(early equipment setup included)', '500', '2020-01-24 07:19:51'),
-(5, 'Karaoke Add-on', 'Karaoke is a great alternative to a disco. It’s perfect for staff parties and children’s parties.', '450', '2020-01-24 07:20:36'),
-(6, 'Uplighters', 'Uplighters are bright lighting fixtures which are installed on the floor and shine a vibrant wash of colour over the walls of your venue', '200', '2020-01-24 07:21:14');
+(1, 'service 1', 'test description', '800', '2020-01-24 07:17:43'),
+(2, 'service 2', 'test description', '700', '2020-01-24 07:18:32'),
+(3, 'service 3', 'test description', '650', '2020-01-24 07:19:14'),
+(4, 'service 4', 'test description', '500', '2020-01-24 07:19:51'),
+(5, 'service 5', 'test description', '450', '2020-01-24 07:20:36'),
+(6, 'service 6', 'test descripton', '200', '2020-01-24 07:21:14');
 
 -- --------------------------------------------------------
 
@@ -231,9 +226,7 @@ ALTER TABLE `tbladmin`
 -- Indexes for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ServiceID` (`ServiceID`),
-  ADD KEY `EventType` (`EventType`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `tblelectrician`
@@ -281,7 +274,7 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblelectrician`
