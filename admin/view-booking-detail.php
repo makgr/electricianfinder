@@ -31,7 +31,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 <!doctype html>
  <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
- <title>Onlind DJ Management System - View Booking</title>
+ <title>Electrician Finder web application - View Booking</title>
 <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
 
 </head>
@@ -68,7 +68,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                                     <?php
                   $eid=$_GET['editid'];
 
-$sql="SELECT tblbooking.BookingID,tblbooking.Name,tblbooking.MobileNumber,tblbooking.Email,tblbooking.EventDate,tblbooking.EventStartingtime,tblbooking.EventEndingtime,tblbooking.VenueAddress,tblbooking.EventType,tblbooking.AdditionalInformation,tblbooking.BookingDate,tblbooking.Remark,tblbooking.Status,tblbooking.UpdationDate,tblservice.ServiceName,tblservice.SerDes,tblservice.ServicePrice from tblbooking join tblservice on tblbooking.ServiceID=tblservice.ID  where tblbooking.ID=:eid";
+$sql="SELECT tblbooking.BookingID,tblbooking.Name,tblbooking.MobileNumber,tblbooking.Email,tblbooking.EventDate,tblbooking.EventStartingtime,tblbooking.EventEndingtime,tblbooking.VenueAddress,tblbooking.electrician,tblbooking.AdditionalInformation,tblbooking.BookingDate,tblbooking.Remark,tblbooking.Status,tblbooking.UpdationDate,tblbooking.payment_method,tblservice.ServiceName,tblservice.SerDes,tblservice.ServicePrice from tblbooking join tblservice on tblbooking.ServiceID=tblservice.ID  where tblbooking.ID=:eid";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':eid', $eid, PDO::PARAM_STR);
 $query->execute();
@@ -96,22 +96,22 @@ foreach($results as $row)
   </tr>
   <tr>
     
-    <th>Event Date</th>
+    <th>Date</th>
     <td><?php  echo $row->EventDate;?></td>
-    <th>Event Starting Time</th>
+    <th>Starting Time</th>
     <td><?php  echo $row->EventStartingtime;?></td>
   </tr>
    <tr>
     
-    <th>Event Ending Time</th>
+    <th>Ending Time</th>
     <td><?php  echo $row->EventEndingtime;?></td>
     <th>Venue Address</th>
     <td><?php  echo $row->VenueAddress;?></td>
   </tr>
   <tr>
     
-    <th>Event Type</th>
-    <td><?php  echo $row->EventType;?></td>
+    <th>Electriciane</th>
+    <td><?php  echo $row->electrician;?></td>
     <th>AdditionalInformation</th>
     <td><?php  echo $row->AdditionalInformation;?></td>
   </tr>
@@ -127,6 +127,12 @@ foreach($results as $row)
     <td>$<?php  echo $row->ServicePrice;?></td>
     <th>Apply Date</th>
     <td><?php  echo $row->BookingDate;?></td>
+  </tr>
+   <tr>
+    <th>Payment Method</th>
+    <td><?php  echo $row->payment_method;?></td>
+    <th></th>
+    <td></td>
   </tr>
 
   <tr>
