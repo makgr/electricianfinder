@@ -84,11 +84,11 @@ if (isset($_POST['submit'])) {
                         </ul>
                         <ul>
                             <li class="text-info">Email: </li>
-                            <li><input type="text" class="text" name="email" required="true"></li>
+                            <li><input type="email" class="text" name="email" required="true"></li>
                         </ul>
                         <ul>
                             <li class="text-info">Mobile Number: </li>
-                            <li><input type="text" class="text" name="mobnum" required="true" maxlength="11" pattern="[0-9]+"></li>
+                            <li><input type="number" class="text" name="mobnum" required="true" maxlength="11" pattern="[0-9]+"></li>
                         </ul>
                         <ul>
                             <li class="text-info">Password:</li>
